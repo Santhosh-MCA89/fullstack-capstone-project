@@ -1,4 +1,5 @@
 import React from 'react';
+import './loginbutton.css';
 
 export default function Navbar() {
     return (
@@ -13,6 +14,12 @@ export default function Navbar() {
                     </li>
                     <li className="nav-item">
                         <a className="nav-link" href="/app">Gifts</a> {/* Updated Link */}
+                    </li>
+                    <li className="nav-item">
+                    <a className="nav-link login-btn" href="/login">Login</a> {/* Custom Login Button */}
+                    </li>
+                    <li className="nav-item">
+                        <a className="nav-link" href="/app/register">Register</a> {/* Updated Link */}
                     </li>
                 </ul>
             </div>
