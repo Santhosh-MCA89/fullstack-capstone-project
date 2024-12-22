@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-
 import './RegisterPage.css';
+import {urlConfig} from '../../config';
 
 function RegisterPage() {
     const [firstName, setFirstName] = useState('');
@@ -9,8 +9,35 @@ function RegisterPage() {
     const [password, setPassword] = useState('');
 
     const handleRegister = async () => {
-        console.log("Register invoked")
-    }
+        const userData = {
+            firstName,
+            lastName,
+            email,
+            password,
+        };
+    
+        try {
+            let url = `${urlConfig.backendUrl}/api/auth/register`
+            const response = await fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(userData),
+            });
+    
+            const data = await response.json();
+    
+            if (response.ok) {
+                console.log("Registration successful", data);
+                // Optionally, redirect user to login or home page after successful registration
+            } else {
+                console.log("Error registering user:", data.message);
+            }
+        } catch (error) {
+            console.error('Error during registration:', error);
+        }
+    };
 
 return (
     <div className="container mt-5">
