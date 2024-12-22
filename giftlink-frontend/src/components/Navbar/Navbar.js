@@ -16,6 +16,9 @@ export default function Navbar() {
                         <a className="nav-link" href="/app">Gifts</a> {/* Updated Link */}
                     </li>
                     <li className="nav-item">
+                        <a className="nav-link" href="/app/search">Search</a>
+                    </li>
+                    <li className="nav-item">
                     <a className="nav-link login-btn" href="/app/login">Login</a> {/* Custom Login Button */}
                     </li>
                     <li className="nav-item">
